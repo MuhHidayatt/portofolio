@@ -7,7 +7,7 @@ export const PERSONAL = {
   github: "https://github.com/MuhHidayatt",
   linkedin: "https://www.linkedin.com/in/mhidayattt",
   email: "muhammadhidayat6704@gmail.com",
-  avatar: "https://avatars.githubusercontent.com/u/148304374?v=4",
+  avatar: "/profile.png",
 };
 
 export const HERO_PILLS = [
