@@ -147,12 +147,13 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "photo-web",
-    title: "Photo Web",
+    title: "AI Style Transfer Studio",
     description:
-      "Modern web application focused on photo management, gallery presentation, and responsive user experience.",
-    tech: ["Web App", "Frontend", "UI/UX", "Responsive"],
+      "Transform your photos into stunning artworks using Neural Style Transfer. Experience the power of generative AI with just a few clicks.",
+    tech: ["Neural Style Transfer", "Generative AI", "React", "UI/UX"],
     github: "https://github.com/MuhHidayatt/photo-web",
-    accent: "violet"
+    accent: "violet",
+    badge: "AI Studio"
   }
 ];
 

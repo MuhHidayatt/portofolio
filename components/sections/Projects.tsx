@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { PROJECTS, type Project } from "@/data/portfolio";
@@ -22,7 +23,19 @@ const cardVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
+const getProjectIcon = (id: string) => {
+  switch (id) {
+    case "certificate-authority": return "🔐";
+    case "splitku": return "💸";
+    case "sipakar-laptop": return "💻";
+    case "photo-web": return "📸";
+    default: return "⚡";
+  }
+};
+
 function ProjectPreview({ id, isCyan }: { id: string; isCyan: boolean }) {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <div className="h-40 w-full overflow-hidden border-b border-[--color-border] relative bg-[#080c14] flex items-center justify-center select-none group-hover:bg-[#0b101c] transition-colors duration-300">
       {/* Mesh glow background hint */}
@@ -30,96 +43,107 @@ function ProjectPreview({ id, isCyan }: { id: string; isCyan: boolean }) {
         isCyan ? "bg-[radial-gradient(circle_at_center,var(--color-primary)_0%,transparent_60%)]" : "bg-[radial-gradient(circle_at_center,var(--color-accent)_0%,transparent_60%)]"
       }`} />
 
-      {id === "certificate-authority" && (
-        <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
-          <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
-            <span className="text-[--color-accent] brightness-150 font-bold flex items-center gap-1">🔐 CA-UMC SECURE SIGN</span>
-            <span className="text-[7px] text-[--color-emerald]">TAMPER-EVIDENT ✓</span>
-          </div>
-          <div className="space-y-1">
-            <div className="h-1 w-1/3 bg-[--color-border] rounded" />
-            <div className="h-1 w-2/3 bg-[--color-border] rounded" />
-          </div>
-          <div className="flex items-end justify-between mt-2 pt-1 border-t border-[--color-border]/30">
-            <div className="space-y-0.5">
-              <div className="h-1.5 w-12 bg-[--color-accent-dim] rounded" />
-              <div className="h-1 w-8 bg-[--color-border] rounded" />
-            </div>
-            <svg width="18" height="18" className="text-[--color-accent] brightness-150" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <rect x="2" y="2" width="6" height="6" />
-              <rect x="16" y="2" width="6" height="6" />
-              <rect x="2" y="16" width="6" height="6" />
-              <rect x="10" y="10" width="4" height="4" />
-            </svg>
-          </div>
-        </div>
-      )}
-
-      {id === "splitku" && (
-        <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
-          <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
-            <span className="text-[--color-primary] font-bold flex items-center gap-1">💸 SPLITKU BILLS</span>
-            <span className="text-[--color-primary] text-[7px] bg-[--color-primary-dim] px-1 rounded">ACTIVE</span>
-          </div>
-          <div className="flex gap-2 flex-1 items-center">
-            <svg width="24" height="24" className="text-[--color-primary]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="8" strokeDasharray="30 20" />
-            </svg>
-            <div className="flex-1 space-y-1">
-              <div className="flex justify-between text-[7px]">
-                <span>Food (50%)</span>
-                <span className="text-[--color-text]">Rp 150K</span>
+      {!imgError ? (
+        <img
+          src={`/projects/${id}.png`}
+          alt={`${id} screenshot`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <>
+          {id === "certificate-authority" && (
+            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
+              <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
+                <span className="text-[--color-accent] brightness-150 font-bold flex items-center gap-1">🔐 CA-UMC SECURE SIGN</span>
+                <span className="text-[7px] text-[--color-emerald]">TAMPER-EVIDENT ✓</span>
               </div>
-              <div className="h-1 bg-[--color-border] rounded overflow-hidden">
-                <div className="h-full w-1/2 bg-[--color-primary]" />
+              <div className="space-y-1">
+                <div className="h-1 w-1/3 bg-[--color-border] rounded" />
+                <div className="h-1 w-2/3 bg-[--color-border] rounded" />
               </div>
-              <div className="flex justify-between text-[7px]">
-                <span>Travel (30%)</span>
-                <span className="text-[--color-text]">Rp 90K</span>
+              <div className="flex items-end justify-between mt-2 pt-1 border-t border-[--color-border]/30">
+                <div className="space-y-0.5">
+                  <div className="h-1.5 w-12 bg-[--color-accent-dim] rounded" />
+                  <div className="h-1 w-8 bg-[--color-border] rounded" />
+                </div>
+                <svg width="18" height="18" className="text-[--color-accent] brightness-150" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <rect x="2" y="2" width="6" height="6" />
+                  <rect x="16" y="2" width="6" height="6" />
+                  <rect x="2" y="16" width="6" height="6" />
+                  <rect x="10" y="10" width="4" height="4" />
+                </svg>
               </div>
             </div>
-          </div>
-        </div>
-      )}
+          )}
 
-      {id === "sipakar-laptop" && (
-        <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
-          <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
-            <span className="text-[--color-primary] font-bold flex items-center gap-1">💻 DIAGNOSE ENGINE</span>
-            <span className="text-[--color-primary] text-[7px] animate-pulse">SCANNING...</span>
-          </div>
-          <div className="flex gap-2 flex-1 items-center justify-center">
-            <svg width="36" height="24" className="text-[--color-muted] group-hover:text-[--color-primary] transition-colors" viewBox="0 0 36 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-              <rect x="4" y="2" width="28" height="16" rx="1" />
-              <line x1="2" y1="20" x2="34" y2="20" strokeWidth="2" />
-              <line x1="10" y1="2" x2="10" y2="18" strokeDasharray="2 2" />
-              <circle cx="18" cy="10" r="3" className="fill-[--color-primary-dim] stroke-[--color-primary]" />
-            </svg>
-          </div>
-          <div className="text-[6px] text-[--color-primary] text-center mt-1 uppercase font-semibold">
-            Forward Chaining / Certainty Factor: 0.95
-          </div>
-        </div>
-      )}
+          {id === "splitku" && (
+            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
+              <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
+                <span className="text-[--color-primary] font-bold flex items-center gap-1">💸 SPLITKU BILLS</span>
+                <span className="text-[--color-primary] text-[7px] bg-[--color-primary-dim] px-1 rounded">ACTIVE</span>
+              </div>
+              <div className="flex gap-2 flex-1 items-center">
+                <svg width="24" height="24" className="text-[--color-primary]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8" strokeDasharray="30 20" />
+                </svg>
+                <div className="flex-1 space-y-1">
+                  <div className="flex justify-between text-[7px]">
+                    <span>Food (50%)</span>
+                    <span className="text-[--color-text]">Rp 150K</span>
+                  </div>
+                  <div className="h-1 bg-[--color-border] rounded overflow-hidden">
+                    <div className="h-full w-1/2 bg-[--color-primary]" />
+                  </div>
+                  <div className="flex justify-between text-[7px]">
+                    <span>Travel (30%)</span>
+                    <span className="text-[--color-text]">Rp 90K</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
-      {id === "photo-web" && (
-        <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
-          <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
-            <span className="text-[--color-accent] brightness-150 font-bold flex items-center gap-1">📸 GALLERY STREAM</span>
-            <span className="text-[7px]">GRID</span>
-          </div>
-          <div className="grid grid-cols-3 gap-1.5 flex-1 mt-1">
-            <div className="border border-[--color-border] bg-[--color-surface] rounded overflow-hidden flex items-center justify-center group-hover:border-[--color-accent]/35 transition-colors">
-              <div className="w-2 h-2 rounded-full bg-[--color-accent-dim]" />
+          {id === "sipakar-laptop" && (
+            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
+              <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
+                <span className="text-[--color-primary] font-bold flex items-center gap-1">💻 DIAGNOSE ENGINE</span>
+                <span className="text-[--color-primary] text-[7px] animate-pulse">SCANNING...</span>
+              </div>
+              <div className="flex gap-2 flex-1 items-center justify-center">
+                <svg width="36" height="24" className="text-[--color-muted] group-hover:text-[--color-primary] transition-colors" viewBox="0 0 36 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                  <rect x="4" y="2" width="28" height="16" rx="1" />
+                  <line x1="2" y1="20" x2="34" y2="20" strokeWidth="2" />
+                  <line x1="10" y1="2" x2="10" y2="18" strokeDasharray="2 2" />
+                  <circle cx="18" cy="10" r="3" className="fill-[--color-primary-dim] stroke-[--color-primary]" />
+                </svg>
+              </div>
+              <div className="text-[6px] text-[--color-primary] text-center mt-1 uppercase font-semibold">
+                Forward Chaining / Certainty Factor: 0.95
+              </div>
             </div>
-            <div className="border border-[--color-border] bg-[--color-surface] rounded overflow-hidden flex items-center justify-center group-hover:border-[--color-accent]/35 transition-colors">
-              <div className="w-2 h-2 rounded-full bg-[--color-accent-dim]" />
+          )}
+
+          {id === "photo-web" && (
+            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
+              <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
+                <span className="text-[--color-accent] brightness-150 font-bold flex items-center gap-1">📸 GALLERY STREAM</span>
+                <span className="text-[7px]">GRID</span>
+              </div>
+              <div className="grid grid-cols-3 gap-1.5 flex-1 mt-1">
+                <div className="border border-[--color-border] bg-[--color-surface] rounded overflow-hidden flex items-center justify-center group-hover:border-[--color-accent]/35 transition-colors">
+                  <div className="w-2 h-2 rounded-full bg-[--color-accent-dim]" />
+                </div>
+                <div className="border border-[--color-border] bg-[--color-surface] rounded overflow-hidden flex items-center justify-center group-hover:border-[--color-accent]/35 transition-colors">
+                  <div className="w-2 h-2 rounded-full bg-[--color-accent-dim]" />
+                </div>
+                <div className="border border-[--color-border] bg-[--color-surface] rounded overflow-hidden flex items-center justify-center group-hover:border-[--color-accent]/35 transition-colors">
+                  <div className="w-2 h-2 rounded-full bg-[--color-accent-dim]" />
+                </div>
+              </div>
             </div>
-            <div className="border border-[--color-border] bg-[--color-surface] rounded overflow-hidden flex items-center justify-center group-hover:border-[--color-accent]/35 transition-colors">
-              <div className="w-2 h-2 rounded-full bg-[--color-accent-dim]" />
-            </div>
-          </div>
-        </div>
+          )}
+        </>
       )}
     </div>
   );
