@@ -25,11 +25,11 @@ const cardVariants: Variants = {
 
 const getProjectIcon = (id: string) => {
   switch (id) {
-    case "certificate-authority": return "🔐";
-    case "splitku": return "💸";
-    case "sipakar-laptop": return "💻";
-    case "photo-web": return "📸";
-    default: return "⚡";
+    case "certificate-authority": return "ðŸ”";
+    case "splitku": return "ðŸ’¸";
+    case "sipakar-laptop": return "ðŸ’»";
+    case "photo-web": return "ðŸ“¸";
+    default: return "âš¡";
   }
 };
 
@@ -37,7 +37,7 @@ function ProjectPreview({ id, isCyan }: { id: string; isCyan: boolean }) {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className="h-40 w-full overflow-hidden border-b border-[--color-border] relative bg-[#080c14] flex items-center justify-center select-none group-hover:bg-[#0b101c] transition-colors duration-300">
+    <div className="h-40 w-full overflow-hidden border-b border-[--color-border] relative bg-[--color-surface] flex items-center justify-center select-none group-hover:bg-[--color-bg] transition-colors duration-300">
       {/* Mesh glow background hint */}
       <div className={`absolute -inset-10 opacity-15 blur-xl transition-opacity duration-300 ${
         isCyan ? "bg-[radial-gradient(circle_at_center,var(--color-primary)_0%,transparent_60%)]" : "bg-[radial-gradient(circle_at_center,var(--color-accent)_0%,transparent_60%)]"
@@ -53,10 +53,10 @@ function ProjectPreview({ id, isCyan }: { id: string; isCyan: boolean }) {
       ) : (
         <>
           {id === "certificate-authority" && (
-            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
+            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[--color-surface] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
               <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
-                <span className="text-[--color-accent] brightness-150 font-bold flex items-center gap-1">🔐 CA-UMC SECURE SIGN</span>
-                <span className="text-[7px] text-[--color-emerald]">TAMPER-EVIDENT ✓</span>
+                <span className="text-[--color-accent] font-bold flex items-center gap-1">ðŸ” CA-UMC SECURE SIGN</span>
+                <span className="text-[7px] text-[--color-emerald]">TAMPER-EVIDENT âœ“</span>
               </div>
               <div className="space-y-1">
                 <div className="h-1 w-1/3 bg-[--color-border] rounded" />
@@ -67,7 +67,7 @@ function ProjectPreview({ id, isCyan }: { id: string; isCyan: boolean }) {
                   <div className="h-1.5 w-12 bg-[--color-accent-dim] rounded" />
                   <div className="h-1 w-8 bg-[--color-border] rounded" />
                 </div>
-                <svg width="18" height="18" className="text-[--color-accent] brightness-150" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <svg width="18" height="18" className="text-[--color-accent]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <rect x="2" y="2" width="6" height="6" />
                   <rect x="16" y="2" width="6" height="6" />
                   <rect x="2" y="16" width="6" height="6" />
@@ -78,9 +78,9 @@ function ProjectPreview({ id, isCyan }: { id: string; isCyan: boolean }) {
           )}
 
           {id === "splitku" && (
-            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
+            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[--color-surface] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
               <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
-                <span className="text-[--color-primary] font-bold flex items-center gap-1">💸 SPLITKU BILLS</span>
+                <span className="text-[--color-primary] font-bold flex items-center gap-1">ðŸ’¸ SPLITKU BILLS</span>
                 <span className="text-[--color-primary] text-[7px] bg-[--color-primary-dim] px-1 rounded">ACTIVE</span>
               </div>
               <div className="flex gap-2 flex-1 items-center">
@@ -105,9 +105,9 @@ function ProjectPreview({ id, isCyan }: { id: string; isCyan: boolean }) {
           )}
 
           {id === "sipakar-laptop" && (
-            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
+            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[--color-surface] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
               <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
-                <span className="text-[--color-primary] font-bold flex items-center gap-1">💻 DIAGNOSE ENGINE</span>
+                <span className="text-[--color-primary] font-bold flex items-center gap-1">ðŸ’» DIAGNOSE ENGINE</span>
                 <span className="text-[--color-primary] text-[7px] animate-pulse">SCANNING...</span>
               </div>
               <div className="flex gap-2 flex-1 items-center justify-center">
@@ -125,9 +125,9 @@ function ProjectPreview({ id, isCyan }: { id: string; isCyan: boolean }) {
           )}
 
           {id === "photo-web" && (
-            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[rgba(13,17,23,0.9)] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
+            <div className="w-[85%] h-[80%] rounded-lg border border-[--color-border] bg-[--color-surface] p-3 relative flex flex-col justify-between font-mono text-[8px] text-[--color-muted] overflow-hidden shadow-inner">
               <div className="flex items-center justify-between border-b border-[--color-border]/50 pb-1.5 mb-1.5">
-                <span className="text-[--color-accent] brightness-150 font-bold flex items-center gap-1">📸 GALLERY STREAM</span>
+                <span className="text-[--color-accent] font-bold flex items-center gap-1">ðŸ“¸ GALLERY STREAM</span>
                 <span className="text-[7px]">GRID</span>
               </div>
               <div className="grid grid-cols-3 gap-1.5 flex-1 mt-1">
@@ -178,7 +178,7 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Header */}
         <div className="flex items-center justify-between gap-4 mb-4">
           <span className={`font-mono text-xs font-bold uppercase ${
-            isCyan ? "text-[--color-primary]" : "text-[--color-accent] brightness-150"
+            isCyan ? "text-[--color-primary]" : "text-[--color-accent]"
           }`}>
             Product Showcase
           </span>
@@ -188,7 +188,7 @@ function ProjectCard({ project }: { project: Project }) {
               <span className={`px-2.5 py-0.5 rounded-md text-[9px] font-bold font-mono tracking-wider uppercase border select-none ${
                 isCyan 
                   ? "border-[--color-primary]/30 bg-[--color-primary-dim] text-[--color-primary]" 
-                  : "border-[--color-accent]/30 bg-[--color-accent-dim] text-[--color-accent] brightness-150"
+                  : "border-[--color-accent]/30 bg-[--color-accent-dim] text-[--color-accent]"
               }`}>
                 {project.badge}
               </span>
@@ -224,7 +224,7 @@ function ProjectCard({ project }: { project: Project }) {
               className={`px-3 py-1 rounded-full text-xs font-mono border ${
                 isCyan
                   ? "border-[--color-primary]/15 text-[--color-primary] bg-[--color-primary-dim]"
-                  : "border-[--color-accent]/15 text-[--color-accent] bg-[--color-accent-dim] brightness-150"
+                  : "border-[--color-accent]/15 text-[--color-accent] bg-[--color-accent-dim]"
               }`}
             >
               {t}
@@ -239,8 +239,8 @@ function ProjectCard({ project }: { project: Project }) {
           rel="noopener noreferrer"
           className={`mt-6 inline-flex items-center gap-1.5 text-xs font-semibold transition-colors duration-200 ${
             isCyan
-              ? "text-[--color-primary]/60 hover:text-[--color-primary]"
-              : "text-[--color-accent]/60 hover:text-[--color-accent] brightness-150"
+              ? "text-[--color-primary]/80 hover:text-[--color-primary]"
+              : "text-[--color-accent]/80 hover:text-[--color-accent]"
           }`}
           aria-label={`View source code for ${project.title} on GitHub`}
         >

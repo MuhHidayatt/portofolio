@@ -153,8 +153,8 @@ export default function About() {
 
             {/* Rigor & Structured Development Callout */}
             {ABOUT.adminApproach && (
-              <div className="glass rounded-2xl p-5 border-l-4 border-l-sky-400 border-y-[--color-border] border-r-[--color-border] relative overflow-hidden bg-gradient-to-r from-sky-400/5 to-transparent hover:shadow-[0_0_20px_rgba(56,189,248,0.05)] transition-all duration-300">
-                <h4 className="text-xs font-bold text-sky-400 font-mono uppercase tracking-widest mb-2 flex items-center gap-2">
+              <div className="glass rounded-2xl p-5 border-l-4 border-l-[--color-sky] border-y-[--color-border] border-r-[--color-border] relative overflow-hidden bg-gradient-to-r from-[--color-sky-dim] to-transparent hover:shadow-[0_0_20px_var(--color-sky-dim)] transition-all duration-300">
+                <h4 className="text-xs font-bold text-[--color-sky] font-mono uppercase tracking-widest mb-2 flex items-center gap-2">
                   <span>📋</span> Rigor & Structured Development
                 </h4>
                 <p className="text-sm text-[--color-muted] leading-relaxed italic">

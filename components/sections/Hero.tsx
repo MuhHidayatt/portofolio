@@ -79,7 +79,7 @@ export default function Hero() {
                 e.preventDefault();
                 document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-[--color-bg] bg-[--color-primary] hover:brightness-110 transition-all duration-200 shadow-lg shadow-cyan-500/20"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-[--color-bg] bg-primary hover:brightness-110 transition-all duration-200 shadow-lg shadow-primary/20"
               aria-label="Scroll down to view featured engineering work"
             >
               View Projects
@@ -108,7 +108,7 @@ export default function Hero() {
             {HERO_PILLS.map((pill) => (
               <span
                 key={pill}
-                className="px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-[--color-border] text-[--color-muted] bg-[--color-surface] hover:border-[--color-primary] hover:text-[--color-primary] transition-all duration-300 cursor-default flex items-center gap-1.5 hover:shadow-[0_0_15px_rgba(0,212,255,0.1)]"
+                className="px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-[--color-border] text-[--color-muted] bg-[--color-surface] hover:border-[--color-primary] hover:text-[--color-primary] transition-all duration-300 cursor-default flex items-center gap-1.5 hover:shadow-primary/10 hover:shadow-md"
               >
                 {pill}
               </span>

@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import { SKILLS, type Skill } from "@/data/portfolio";
+import { Monitor, Server, Bot, GitBranch, FileText } from "lucide-react";
 
 const CATEGORIES = [
   { 
@@ -10,16 +11,16 @@ const CATEGORIES = [
     color: "text-[--color-primary]", 
     dot: "bg-[--color-primary]",
     accent: "cyan",
-    icon: "💻",
+    icon: Monitor,
     className: "col-span-1 md:col-span-1 lg:col-span-2"
   },
   { 
     key: "backend" as const, 
     label: "Backend", 
-    color: "text-[--color-accent] brightness-150", 
+    color: "text-[--color-accent]", 
     dot: "bg-[--color-accent]",
     accent: "violet",
-    icon: "⚙️",
+    icon: Server,
     className: "col-span-1 md:col-span-1 lg:col-span-2"
   },
   { 
@@ -28,25 +29,25 @@ const CATEGORIES = [
     color: "text-[--color-emerald]", 
     dot: "bg-[--color-emerald]",
     accent: "emerald",
-    icon: "🤖",
+    icon: Bot,
     className: "col-span-1 md:col-span-1 lg:col-span-2"
   },
   { 
     key: "workflow" as const, 
     label: "Builder Workflow", 
-    color: "text-amber-400", 
-    dot: "bg-amber-400",
+    color: "text-[--color-amber]", 
+    dot: "bg-[--color-amber]",
     accent: "amber",
-    icon: "🔄",
+    icon: GitBranch,
     className: "col-span-1 md:col-span-1 lg:col-span-3"
   },
   { 
     key: "admin" as const, 
     label: "Data & Administration", 
-    color: "text-sky-400", 
-    dot: "bg-sky-400",
+    color: "text-[--color-sky]", 
+    dot: "bg-[--color-sky]",
     accent: "sky",
-    icon: "📊",
+    icon: FileText,
     className: "col-span-1 md:col-span-2 lg:col-span-3" // Spans full row on tablet (2 cols)
   },
 ];
@@ -83,8 +84,8 @@ function SkillCard({
           ? "border-[--color-emerald]/45 bg-gradient-to-b from-[--color-emerald]/5 to-transparent shadow-[0_0_25px_rgba(16,185,129,0.06)] hover:shadow-[0_0_30px_rgba(16,185,129,0.18)]" 
           : category.accent === "cyan" ? "border-[--color-border] hover:border-[--color-primary]/40 hover:glow-cyan" :
             category.accent === "violet" ? "border-[--color-border] hover:border-[--color-accent]/40 hover:glow-violet" :
-            category.accent === "sky" ? "border-[--color-border] hover:border-sky-400/40 hover:shadow-[0_0_20px_rgba(56,189,248,0.12)]" :
-            "border-[--color-border] hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(251,191,36,0.12)]"
+            category.accent === "sky" ? "border-[--color-border] hover:border-[--color-sky]/40 hover:shadow-sky/10 hover:shadow-md" :
+            "border-[--color-border] hover:border-[--color-amber]/40 hover:shadow-amber/10 hover:shadow-md"
       }`}
     >
       {/* Top indicator bar for AI card */}
@@ -95,9 +96,9 @@ function SkillCard({
       <div>
         {/* Title & Icon */}
         <h3
-          className={`text-sm font-bold font-mono uppercase tracking-wider mb-5 flex items-center gap-2 ${category.color}`}
+          className={`text-sm font-bold font-mono uppercase tracking-wider mb-5 flex items-center gap-2.5 ${category.color}`}
         >
-          <span className="text-sm">{category.icon}</span> 
+          <category.icon size={16} className="shrink-0" /> 
           <span className="truncate">{category.label}</span>
         </h3>
 
@@ -111,8 +112,8 @@ function SkillCard({
                   ? "border-[--color-emerald]/15 text-[--color-emerald] bg-[--color-emerald]/5 hover:border-[--color-emerald]" 
                   : category.accent === "cyan" ? "border-[--color-border] text-[--color-muted] hover:border-[--color-primary] hover:text-[--color-primary] bg-[--color-surface]" :
                     category.accent === "violet" ? "border-[--color-border] text-[--color-muted] hover:border-[--color-accent] hover:text-[--color-accent] bg-[--color-surface]" :
-                    category.accent === "sky" ? "border-[--color-border] text-[--color-muted] hover:border-sky-400 hover:text-sky-400 bg-[--color-surface]" :
-                    "border-[--color-border] text-[--color-muted] hover:border-amber-400 hover:text-amber-400 bg-[--color-surface]"
+                    category.accent === "sky" ? "border-[--color-border] text-[--color-muted] hover:border-[--color-sky] hover:text-[--color-sky] bg-[--color-surface]" :
+                    "border-[--color-border] text-[--color-muted] hover:border-[--color-amber] hover:text-[--color-amber] bg-[--color-surface]"
               }`}
             >
               {skill.name}

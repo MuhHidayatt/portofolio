@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, PERSONAL } from "@/data/portfolio";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -58,7 +59,7 @@ export default function Navbar() {
         >
           <span className="gradient-text">MH</span>
           <span className="text-[--color-muted] text-sm font-mono ml-2 hidden sm:inline">
-            /hidayat
+            Portofolio
           </span>
         </a>
 
@@ -91,14 +92,17 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden p-2 text-[--color-muted] hover:text-[--color-text] transition-colors"
-          onClick={() => setMobileOpen((o) => !o)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        {/* Right side: theme toggle + mobile hamburger */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            className="md:hidden p-2 text-[--color-muted] hover:text-[--color-text] transition-colors"
+            onClick={() => setMobileOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Drawer */}

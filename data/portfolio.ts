@@ -6,7 +6,8 @@ export const PERSONAL = {
   location: "Indonesia",
   github: "https://github.com/MuhHidayatt",
   linkedin: "https://www.linkedin.com/in/mhidayattt",
-  email: "muhammadhidayat6704@gmail.com",
+  email: "muhidayat467@gmail.com",
+  instagram: "https://www.instagram.com/mhidayat._?igsh=cGFla3Z0YTVyZTdp",
   avatar: "/profile.png",
 };
 
@@ -162,39 +163,71 @@ export interface ExperienceItem {
   organization: string;
   period: string;
   points: string[];
+  tags?: string[];
+  type: "technical" | "leadership";
 }
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
+    role: "PKL (Praktik Kerja Lapangan)",
+    organization: "Pusdatin — Universitas Muhammadiyah Cirebon",
+    period: "Jun 2026 – Okt 2026",
+    type: "technical",
+    tags: ["Certificate Authority", "Document Security", "Web Development"],
+    points: [
+      "Terlibat dalam pengembangan sistem Certificate Authority untuk kebutuhan validasi dan verifikasi dokumen digital.",
+      "Berkontribusi pada perancangan dan implementasi sistem yang mendukung keamanan serta keaslian dokumen elektronik.",
+      "Mendukung proses pengembangan aplikasi dari tahap perencanaan hingga implementasi.",
+    ],
+  },
+  {
+    role: "Magang — Bidang SP-Egov Application",
+    organization: "Diskominfo Kabupaten Cirebon",
+    period: "Okt 2025 – Des 2025",
+    type: "technical",
+    tags: ["Government Technology", "SP-Egov", "Website Development", "Documentation"],
+    points: [
+      "Mendukung pengembangan dan pengelolaan aplikasi pemerintahan daerah dalam lingkup SP-Egov.",
+      "Mengelola dan memperbarui website CSIRT Kabupaten Cirebon.",
+      "Berpartisipasi dalam kegiatan sosialisasi dan pendampingan pengelolaan website desa.",
+      "Membantu pengembangan website SIBANGKOM (Sistem Pelayanan Pengembangan Kompetensi).",
+      "Membantu pengembangan website SIPASTI (Sistem Penilaian Statistik Sektoral).",
+      "Menyusun notulen rapat dan dokumentasi kegiatan bidang SP-Egov.",
+    ],
+  },
+  {
     role: "Sekretaris",
     organization: "Karang Taruna Margatama Desa Koreak",
     period: "Jan 2026 – Present",
+    type: "leadership",
     points: [
       "Mengotomatisasi pengarsipan dokumentasi kepemudaan secara terstruktur.",
       "Menyusun 15+ notulensi rapat resmi dan laporan pertanggungjawaban kegiatan.",
-      "Mengoordinasikan perencanaan serta alur pelaksanaan program pengabdian masyarakat."
-    ]
+      "Mengoordinasikan perencanaan serta alur pelaksanaan program pengabdian masyarakat.",
+    ],
   },
   {
     role: "Sekretaris Umum",
     organization: "HIMASANTIKA",
     period: "Feb 2024 – Dec 2024",
+    type: "leadership",
     points: [
       "Memimpin tata kelola kesekretariatan dan administrasi bagi 80+ anggota aktif.",
       "Mengarsip notulensi rapat bulanan serta dokumen legalitas kemahasiswaan.",
-      "Mengoordinasikan komunikasi strategis dan agenda kerja bersama ketua himpunan."
-    ]
+      "Mengoordinasikan komunikasi strategis dan agenda kerja bersama ketua himpunan.",
+    ],
   },
   {
     role: "Staf Kaderisasi",
     organization: "HIMASANTIKA",
     period: "Feb 2023 – Dec 2023",
+    type: "leadership",
     points: [
       "Mendesain kurikulum dan memfasilitasi program kaderisasi bagi 100+ mahasiswa baru.",
       "Mengoordinasikan pelatihan dasar kepemimpinan dan mentoring berkala.",
-      "Mengelola database keaktifan dan pelaporan administratif program."
-    ]
-  }
+      "Mengelola database keaktifan dan pelaporan administratif program.",
+    ],
+  },
 ];
 
 export const NAV_LINKS = [

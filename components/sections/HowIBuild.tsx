@@ -103,7 +103,7 @@ export default function HowIBuild() {
             {HOW_I_BUILD_TOOLS.map((tool) => (
               <span
                 key={tool}
-                className="px-4 py-2 rounded-xl text-xs font-mono font-medium border border-[--color-border] text-[--color-muted] bg-[--color-surface] hover:border-[--color-primary]/40 hover:text-[--color-primary] hover:shadow-[0_0_15px_rgba(0,212,255,0.1)] transition-all duration-300 cursor-default"
+                className="px-4 py-2 rounded-xl text-xs font-mono font-medium border border-[--color-border] text-[--color-muted] bg-[--color-surface] hover:border-[--color-primary]/40 hover:text-[--color-primary] hover:shadow-primary/10 hover:shadow-md transition-all duration-300 cursor-default"
               >
                 {tool}
               </span>

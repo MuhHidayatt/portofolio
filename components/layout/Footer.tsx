@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[--color-border] py-8">
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[--color-muted]">
-        <span>
+        <span suppressHydrationWarning>
           © {year}{" "}
           <span className="text-[--color-text] font-medium">{PERSONAL.name}</span>
         </span>
