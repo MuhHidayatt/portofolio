@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Hidayat — AI-Assisted Full Stack Developer",
+  title: "Hidayat Portfolio",
   description:
-    "AI-Assisted Full Stack Developer based in Indonesia. I build modern systems, web applications, and digital products with code, AI, and open-source tools.",
+    "AI-Assisted Full Stack Developer building modern systems, web applications, and digital products with code, AI, and open-source tools.",
   keywords: [
     "AI-Assisted Developer",
     "Full Stack Developer",
@@ -26,17 +26,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Muhammad Hidayat", url: "https://github.com/MuhHidayatt" }],
   openGraph: {
-    title: "Muhammad Hidayat — AI-Assisted Full Stack Developer",
+    title: "Hidayat Portfolio",
     description:
-      "AI-Assisted Full Stack Developer based in Indonesia. Building modern systems, web applications, and digital products with code, AI, and open-source tools.",
+      "AI-Assisted Full Stack Developer building modern systems, web applications, and digital products with code, AI, and open-source tools.",
     type: "website",
     locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Hidayat — AI-Assisted Full Stack Developer",
+    title: "Hidayat Portfolio",
     description:
-      "AI-Assisted Full Stack Developer based in Indonesia. Building modern systems, web applications, and digital products with code, AI, and open-source tools.",
+      "AI-Assisted Full Stack Developer building modern systems, web applications, and digital products with code, AI, and open-source tools.",
   },
 };
 
