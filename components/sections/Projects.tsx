@@ -265,13 +265,13 @@ export default function Projects() {
           className="mb-12"
         >
           <span className="font-mono text-xs text-[--color-primary] tracking-widest uppercase">
-            04. Projects
+            04. Projects &amp; Systems
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-[--color-text] mt-2">
-            Featured Work
+            Featured Systems &amp; Projects
           </h2>
           <p className="text-[--color-muted] mt-3 max-w-xl text-sm leading-relaxed">
-            Selected software products built using type-safe engineering systems, modular patterns, and AI-accelerated dev setups.
+            Sistem informasi, aplikasi berbasis data, dan solusi teknologi terkurasi yang dirancang untuk memecahkan masalah nyata serta mengoptimalkan proses bisnis.
           </p>
         </motion.div>
 

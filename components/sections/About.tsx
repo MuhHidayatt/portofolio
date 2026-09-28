@@ -83,7 +83,7 @@ export default function About() {
               
               {/* Small educational status badge */}
               <span className="inline-block px-2.5 py-1 rounded bg-[--color-primary-dim] border border-[--color-primary]/20 text-[9px] font-bold font-mono text-[--color-primary] uppercase tracking-wider mb-3 select-none">
-                🎓 Final Year Informatics Engineering Student
+                🎓 Fresh Graduate • Universitas Muhammadiyah Cirebon
               </span>
               
               <div className="flex items-center justify-center md:justify-start gap-1.5 mt-1 text-xs text-[--color-muted]">
@@ -126,36 +126,33 @@ export default function About() {
               <p className="text-sm text-[--color-muted] leading-relaxed">
                 {ABOUT.whoIAm}
               </p>
-              <p className="text-sm text-[--color-muted] leading-relaxed">
-                {ABOUT.educationText}
-              </p>
             </div>
 
-            {/* What I love */}
+            {/* Experience & Practical Foundation */}
             <div>
               <h4 className="text-xs font-bold text-[--color-primary] font-mono uppercase tracking-widest mb-2">
-                What I love in development
+                Professional Experience & System Analysis
               </h4>
               <p className="text-sm text-[--color-muted] leading-relaxed">
                 {ABOUT.whatILove}
               </p>
             </div>
 
-            {/* Why I build */}
+            {/* Career Objective & Vision */}
             <div>
               <h4 className="text-xs font-bold text-[--color-primary] font-mono uppercase tracking-widest mb-2">
-                Why I build software
+                Continuous Learning & Career Objective
               </h4>
               <p className="text-sm text-[--color-muted] leading-relaxed">
                 {ABOUT.whyIBuild}
               </p>
             </div>
 
-            {/* Rigor & Structured Development Callout */}
+            {/* Leadership & Organizational Callout */}
             {ABOUT.adminApproach && (
               <div className="glass rounded-2xl p-5 border-l-4 border-l-[--color-sky] border-y-[--color-border] border-r-[--color-border] relative overflow-hidden bg-gradient-to-r from-[--color-sky-dim] to-transparent hover:shadow-[0_0_20px_var(--color-sky-dim)] transition-all duration-300">
                 <h4 className="text-xs font-bold text-[--color-sky] font-mono uppercase tracking-widest mb-2 flex items-center gap-2">
-                  <span>📋</span> Rigor & Structured Development
+                  <span>🏛️</span> Leadership & Organizational Experience
                 </h4>
                 <p className="text-sm text-[--color-muted] leading-relaxed italic">
                   &ldquo;{ABOUT.adminApproach}&rdquo;

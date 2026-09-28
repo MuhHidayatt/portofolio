@@ -2,30 +2,39 @@
 
 import { motion, type Variants } from "framer-motion";
 import { SKILLS, type Skill } from "@/data/portfolio";
-import { Monitor, Server, Bot, GitBranch, FileText } from "lucide-react";
+import { BarChart3, Database, Monitor, Bot, FileText } from "lucide-react";
 
 const CATEGORIES = [
   { 
-    key: "frontend" as const, 
-    label: "Frontend", 
+    key: "data" as const, 
+    label: "Data & Business Analysis", 
     color: "text-[--color-primary]", 
     dot: "bg-[--color-primary]",
     accent: "cyan",
+    icon: BarChart3,
+    className: "col-span-1 md:col-span-1 lg:col-span-3"
+  },
+  { 
+    key: "backend" as const, 
+    label: "Information Systems & DB", 
+    color: "text-[--color-accent]", 
+    dot: "bg-[--color-accent]",
+    accent: "violet",
+    icon: Database,
+    className: "col-span-1 md:col-span-1 lg:col-span-3"
+  },
+  { 
+    key: "frontend" as const, 
+    label: "Application & Web Tech", 
+    color: "text-[--color-sky]", 
+    dot: "bg-[--color-sky]",
+    accent: "sky",
     icon: Monitor,
     className: "col-span-1 md:col-span-1 lg:col-span-2"
   },
   { 
-    key: "backend" as const, 
-    label: "Backend", 
-    color: "text-[--color-accent]", 
-    dot: "bg-[--color-accent]",
-    accent: "violet",
-    icon: Server,
-    className: "col-span-1 md:col-span-1 lg:col-span-2"
-  },
-  { 
     key: "ai" as const, 
-    label: "AI & Automation", 
+    label: "AI & Productivity", 
     color: "text-[--color-emerald]", 
     dot: "bg-[--color-emerald]",
     accent: "emerald",
@@ -34,21 +43,12 @@ const CATEGORIES = [
   },
   { 
     key: "workflow" as const, 
-    label: "Builder Workflow", 
+    label: "Documentation & Workflow", 
     color: "text-[--color-amber]", 
     dot: "bg-[--color-amber]",
     accent: "amber",
-    icon: GitBranch,
-    className: "col-span-1 md:col-span-1 lg:col-span-3"
-  },
-  { 
-    key: "admin" as const, 
-    label: "Data & Administration", 
-    color: "text-[--color-sky]", 
-    dot: "bg-[--color-sky]",
-    accent: "sky",
     icon: FileText,
-    className: "col-span-1 md:col-span-2 lg:col-span-3" // Spans full row on tablet (2 cols)
+    className: "col-span-1 md:col-span-1 lg:col-span-2"
   },
 ];
 
@@ -138,13 +138,13 @@ export default function Skills() {
           className="mb-12"
         >
           <span className="font-mono text-xs text-[--color-primary] tracking-widest uppercase">
-            03. Building Stack
+            03. Skills &amp; Technology Stack
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-[--color-text] mt-2">
-            Building Stack
+            Skills &amp; Technology Stack
           </h2>
           <p className="text-[--color-muted] mt-3 max-w-xl leading-relaxed text-sm">
-            Perangkat lunak, framework, pustaka, dan kecerdasan buatan yang saya kombinasikan secara sinergis untuk membangun aplikasi siap pakai.
+            Perangkat lunak, analisis data, basis data, dan teknologi sistem yang saya gunakan untuk mentransformasikan kebutuhan bisnis menjadi solusi digital yang andal.
           </p>
         </motion.div>
 

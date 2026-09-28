@@ -50,8 +50,8 @@ export default function Hero() {
             variants={fadeUp}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[--color-text] leading-[1.1] mb-5 font-sans"
           >
-            AI-Assisted <br className="hidden sm:inline" />
-            <span className="gradient-text">Full Stack Developer</span>
+            Data, Systems & <br className="hidden sm:inline" />
+            <span className="gradient-text">Technology Solutions</span>
           </motion.h1>
 
           {/* Tagline */}

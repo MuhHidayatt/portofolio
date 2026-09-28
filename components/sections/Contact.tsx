@@ -88,7 +88,7 @@ export default function Contact() {
             Let&apos;s Connect
           </h2>
           <p className="text-[--color-muted] mt-4 max-w-md mx-auto leading-relaxed">
-            Saya terbuka untuk peluang baru, kolaborasi, atau sekadar ngobrol tentang teknologi.
+            Saya terbuka untuk peluang karier, proyek kolaboratif, serta diskusi seputar analisis data, sistem informasi, dan teknologi.
           </p>
         </motion.div>
 

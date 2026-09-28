@@ -10,33 +10,35 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Hidayat Portfolio",
+  title: "Muhammad Hidayat | Portfolio",
   description:
-    "AI-Assisted Full Stack Developer building modern systems, web applications, and digital products with code, AI, and open-source tools.",
+    "Fresh Graduate in Informatics Engineering from Universitas Muhammadiyah Cirebon with an interest in data analysis, business analysis, information systems, and technology.",
   keywords: [
-    "AI-Assisted Developer",
-    "Full Stack Developer",
+    "Muhammad Hidayat",
+    "Fresh Graduate",
+    "Teknik Informatika",
+    "Universitas Muhammadiyah Cirebon",
+    "Data Analysis",
+    "Business Analysis",
+    "Information Systems",
     "Next.js",
     "TypeScript",
-    "Laravel",
-    "React",
     "Web Developer",
     "Indonesia",
-    "Muhammad Hidayat",
   ],
   authors: [{ name: "Muhammad Hidayat", url: "https://github.com/MuhHidayatt" }],
   openGraph: {
-    title: "Hidayat Portfolio",
+    title: "Muhammad Hidayat | Portfolio",
     description:
-      "AI-Assisted Full Stack Developer building modern systems, web applications, and digital products with code, AI, and open-source tools.",
+      "Fresh Graduate in Informatics Engineering from Universitas Muhammadiyah Cirebon with an interest in data analysis, business analysis, information systems, and technology.",
     type: "website",
     locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hidayat Portfolio",
+    title: "Muhammad Hidayat | Portfolio",
     description:
-      "AI-Assisted Full Stack Developer building modern systems, web applications, and digital products with code, AI, and open-source tools.",
+      "Fresh Graduate in Informatics Engineering from Universitas Muhammadiyah Cirebon with an interest in data analysis, business analysis, information systems, and technology.",
   },
 };
 

@@ -32,13 +32,13 @@ export default function HowIBuild() {
           className="mb-16"
         >
           <span className="font-mono text-xs text-[--color-primary] tracking-widest uppercase">
-            02. How I Build
+            02. Methodology &amp; Workflow
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-[--color-text] mt-2 font-sans">
-            How I Build
+            Methodology &amp; Workflow
           </h2>
           <p className="text-[--color-muted] mt-3 max-w-2xl leading-relaxed">
-            My workflow for turning ideas into working products.
+            Alur kerja metodis untuk mentransformasikan kebutuhan bisnis dan eksplorasi data menjadi sistem digital yang andal dan terstruktur.
           </p>
         </motion.div>
 
@@ -96,7 +96,7 @@ export default function HowIBuild() {
           <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[--color-accent-dim] to-transparent pointer-events-none opacity-45" />
 
           <h3 className="text-sm font-bold font-mono text-[--color-primary] uppercase tracking-widest mb-6">
-            🛠️ Main Builder Toolbox
+            🛠️ Analysis, Database &amp; Tech Toolbox
           </h3>
 
           <div className="flex flex-wrap gap-3">
